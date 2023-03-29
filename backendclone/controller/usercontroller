@@ -1,0 +1,50 @@
+const userModel=require("../Model/userModel")
+
+
+const adduser=async (req,res)=>{
+    try {
+        await userModel.create(req.body)
+        res.json({
+            sucees:true,
+            message:"useradded"
+        })
+    } catch (error) {
+        res.json({success:false,
+        message:"canoot added"})
+    }
+
+}
+
+
+const userlogin=async(req,res)=>{
+    console.log(req.body.loginpassword,req.body.loginusername);
+    try {
+     let user=   await userModel.findOne({username:req.body.loginusername})
+        console.log("user", user); 
+      if(user.password==req.body.loginpassword){
+        
+            res.json({
+                
+                    success:true,
+                    message:"login succes"
+                
+            })
+         }else{
+            res.json({
+                success:false,
+                message:"not logined"
+            })
+         }
+       
+    } catch (error) {
+        console.log(error);
+        res.json({
+            success:false,
+            message:"server error"
+        })
+    }
+}
+
+
+
+module.exports={adduser,userlogin}
