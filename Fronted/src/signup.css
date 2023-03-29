@@ -1,0 +1,31 @@
+.signup{
+    width: 500px;
+    height: 650px;
+/* border: 1px black solid; */
+}
+.Signupbody{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.h{
+    margin-left: 10px;
+}
+.signh1{
+    margin-left: 130px;
+    font-size: 3em;
+  
+    background: -webkit-linear-gradient(#a2f4f7, #0a3fce);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+}
+.signi{
+    width: 400px;
+}
+.btn{
+    margin-left:80px;
+    margin-top: 20px;
+}
